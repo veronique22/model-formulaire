@@ -1,41 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
   <head>
-    <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="theme-color" content="#000000" />
-    <!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <!--https://developer.mozilla.org/fr/docs/Web/Guide/HTML/Formulaires/Les_blocs_de_formulaires_natifs-->
+    <meta charset="utf-8">
+    <title>Formulaire Complexe</title>
+    <link href="model Style.css" rel="stylesheet">
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <form action="https://www.facebook.com/veronique.majo" method="post">
+      <h1>Formulaire de paiement</h1>
+      <p>Les champs obligatoires sont suivis par un <strong><abbr title="required"></abbr></strong>*</p>
+      <section>
+        <h2>Informations de contact</h2>
+        <fieldset>
+          <legend>Qualité</legend>
+          <ul>
+              <li>
+                <label for="title_1">
+                  <input type="radio" id="title_1" name="title" value="M." >
+                  Monsieur
+                </label>
+              </li>
+              <li>
+                <label for="title_2">
+                  <input type="radio" id="title_2" name="title" value="Mme.">
+                  Madame
+                </label>
+              </li>
+          </ul>
+        </fieldset>
+        <p>
+          <label for="name">
+            <span>Nom : </span>
+            <strong><abbr title="required">*</abbr></strong>
+          </label>
+          <input type="text" id="name" name="username">
+        </p>
+        <p>
+          <label for="mail">
+            <span>e-mail :</span>
+            <strong><abbr title="required">*</abbr></strong>
+          </label>
+          <input type="email" id="mail" name="usermail">
+        </p>
+        <p>
+          <label for="pwd">
+            <span>Mot de passe :</span>
+            <strong><abbr title="required">*</abbr></strong>
+          </label>
+          <input type="password" id="pwd" name="password">
+        </p>
+    </section>
+    <section>
+      <h2>Informations de paiement</h2>
+      <p>
+        <label for="card">
+          <span>Type de carte :</span>
+        </label>
+        <select id="card" name="usercard">
+          <option value="visa">Visa</option>
+          <option value="mc">Mastercard</option>
+          <option value="bcontact">Banck contact</option>
+        </select>
+      </p>
+      <p>
+        <label for="number">
+          <span>Numéro de carte :</span>
+          <strong><abbr title="required">*</abbr></strong>
+        </label>
+        <input type="text" id="number" name="cardnumber">
+      </p>
+      <p>
+        <label for="date">
+          <span>Validité :</span>
+          <strong><abbr title="required">*</abbr></strong>
+          <em>format mm/aa</em>
+        </label>
+        <input type="text" id="date" name="expiration">
+      </p>
+  </section>
+  <p> <button type="submit">Valider le paiement</button> </p>
+    </form>
   </body>
 </html>
